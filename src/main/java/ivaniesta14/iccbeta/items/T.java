@@ -7,9 +7,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class T extends Item{
-	public static final int red=0xFF0000,yellow=0xFFFF00,green=0x00FF00,
-							cyan=0x00FFFF,blue=0x0000FF,magenta=0xFF00FF;
-	public static final int white=0xFFFFFF,black=0x000000,gray=0x7F7F7F;
+	public static final int red=0xFF0000, yellow=0xFFFF00, green=0x00FF00,
+	public static final int cyan=0x00FFFF, blue=0x0000FF, magenta=0xFF00FF;
+	public static final int white=0xFFFFFF, black=0x000000, gray=0x7F7F7F;
 	private int c=white;
 	public T(){}
 	public T(int o){
