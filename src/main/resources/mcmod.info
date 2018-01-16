@@ -1,16 +1,16 @@
 [
 {
-  "modid": "iccbeta",
-  "name": "ivaniesta14's Crafting Challenge Beta Edition",
-  "description": "The Beta edition of the ivaniesta14's Crafting Challenge\n\nDo you think TheCakeMod is too easy? You are right!\nThis mod is its parody and this one requires other mods aswell!",
+  "modid": "examplemod",
+  "name": "Example Mod",
+  "description": "Example placeholder mod.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ivaniesta14"],
-  "credits": "Just ivaniesta14!... and HellFirePvP, creator of TheCakeMod, inspiration of this mod.",
+  "authorList": ["ExampleDude"],
+  "credits": "The Forge and FML guys, for making this example",
   "logoFile": "",
   "screenshots": [],
-  "dependencies": ["avaritia","ThermalExpansion"]
+  "dependencies": []
 }
 ]
