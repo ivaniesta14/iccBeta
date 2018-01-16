@@ -5,7 +5,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import tonius.simplyjetpacks.setup.ModItems;
 import WayofTime.bloodmagic.api.registry.AltarRecipeRegistry;
-import static WayofTime.bloodmagic.api.registry.AltarRecipeRegistry.AltarRecipe;
 import WayofTime.bloodmagic.api.altar.EnumAltarTier;
 import vazkii.botania.api.BotaniaAPI;
 import ivaniesta14.iccbeta.L;
@@ -74,19 +73,22 @@ public class S {
 		return this;
 	}
 	public enum CM{
-		PB, //This set should bypass prev==null check. 
-		IR, //this should use the Original Hammer, the Original Binder and the Original Mortar, not prev's ones; requires flag PB.
+		/**No Null Check for prev*/NNC,
+		/**Use Original tools*/OR,
 	}
 	public S c(Item mat, CM... flags) throws Exception{
-		if(prev==null&&!hasFlag(CM.PB, flags)
-			throw new Exception("S.c(IC...): prev is null and flag PB was not set! ");
-		Item ham=prev.hammer;
-		Item bind=prev.binder;
-		Item mort=prev.mortar;
-		if(hasFlag(CM.IR, flags)){
+		Item ham,bind,mort;
+		if(hasFlag(CM.OR, flags)&&hasFlag(CM.NNC)){
 			ham=L.OHammer;
 			bind=L.OBinder;
 			mort=L.OMortar;
+		}
+		else if(prev==null&&!hasFlag(CM.NNC, flags)
+			throw new Exception("S.c(IC...): prev is null and flag NNC was not set! ");
+		else{
+			ham=prev.hammer;
+			bind=prev.binder;
+			mort=prev.mortar;
 		}
 		R.c(this.hammer,
 			"pp ",
