@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "iccbeta",
+  "name": "ivaniesta14's Crafting Challenge Beta Edition",
+  "description": "Not so easy crafting challenge designed to require some of ivaniesta14's favourite mods.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["ivaniesta14"],
+  "credits": "ivaniesta14, the creator of this challenge and HellFirePvP, creator of TheCakeMod, inspiration of this challenge.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
