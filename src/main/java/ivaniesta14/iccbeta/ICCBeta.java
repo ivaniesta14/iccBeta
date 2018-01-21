@@ -1,8 +1,7 @@
 package ivaniesta14.iccbeta;
 
-import org.apache.logging.log4j.Level;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.event.*;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.event.*;
 import ivaniesta14.iccbeta.utils.Utils;
 
 @Mod(modid="iccbeta",name="ICCBeta",version="0.1")
@@ -20,7 +19,7 @@ public class ICCBeta {
 	};
 	
 	@Mod.EventHandler
-	public void h(FMLPreInitializationEvent ev){
+	public void h(@SuppressWarnings("unused") FMLPreInitializationEvent ev){
 		try{
 			L.h();
 		}
@@ -34,9 +33,9 @@ public class ICCBeta {
 			else
 				O.f("An exception has been caught during ICCBeta PreInit!");
 		}
-	};
+	}
 	@Mod.EventHandler
-	public void i(FMLInitializationEvent ev){
+	public void i(@SuppressWarnings("unused") FMLInitializationEvent ev){
 		if(!E)
 			try{
 				try{
@@ -65,7 +64,7 @@ public class ICCBeta {
 		else
 			O.f("Previous exception caught. ICCBeta Init not executed.");
 	}
-	public void j(FMLPostInitializationEvent ev){
+	public void j(@SuppressWarnings("unused") FMLPostInitializationEvent ev){
 		if(E||F)
 			O.f("Previous exception caught. ICCBeta PostInit not executed");
 		else
@@ -78,7 +77,7 @@ public class ICCBeta {
 				if(!G)
 					O.o("No problems duing ICCBeta PostInit");
 				else
-					O.f("An exception has been caught during ICCBeta "
+					O.f("An exception has been caught during ICCBeta "+
 						"PostInit!");
 			}
 	}

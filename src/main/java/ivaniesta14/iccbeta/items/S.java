@@ -1,13 +1,11 @@
-package ivaniesta14.iccbeta.items
+package ivaniesta14.iccbeta.items;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import tonius.simplyjetpacks.setup.ModItems;
-import WayofTime.bloodmagic.api.registry.AltarRecipeRegistry;
-import WayofTime.bloodmagic.api.altar.EnumAltarTier;
-import vazkii.botania.api.BotaniaAPI;
-import ivaniesta14.iccbeta.L;
+//import ivaniesta14.iccbeta.L;
+//import net.minecraft.init.Items;
+//import net.minecraft.item.Item;
+//import net.minecraftforge.fml.common.registry.GameRegistry;
+//import tonius.simplyjetpacks.setup.ModItems;
+//import vazkii.botania.api.BotaniaAPI;
 
 public class S {
 	public static final boolean f=false,t=true;
@@ -43,7 +41,7 @@ public class S {
 		binder=new T(color);
 		mortar=new T(color);
 	}
-	public S r() throws Exception{
+	/*public S r() throws Exception{
 		for(int i=0;i<ingots.length;i++){
 			R.r(ingots[i],ingots.length-i,
 				"ingot"+material+String.valueOf(i),f,
@@ -71,12 +69,12 @@ public class S {
 		///TODO: Add plate?.png to assets 
 		R.r(mortar,1,"hammer"+material,f,"mortar");
 		return this;
-	}
+	}*/
 	public enum CM{
 		/**No Null Check for prev*/NNC,
 		/**Use Original tools*/OR,
 	}
-	public S c(Item mat, CM... flags) throws Exception{
+	/*public S c(Item mat, CM... flags) throws Exception{
 		Item ham,bind,mort;
 		if(hasFlag(CM.OR, flags)&&hasFlag(CM.NNC)){
 			ham=L.OHammer;
@@ -96,7 +94,7 @@ public class S {
 			"pp ",
 			'p', plateDense,
 			'P', plateOcta,
-			's', Items.stick);
+			's', Items.STICK);
 		R.c(this.binder,
 			"isi",
 			"scs",
@@ -173,11 +171,11 @@ public class S {
 		BotaniaAPI.registerElvenTrade(T.s(plateDense),T.s(plateOcta));
 
 		return this;
-	}
+	*/
 	protected static boolean hasFlag(CM f, CM... flags){
 		for(CM flag:flags)
 			if(flag==f)
-				return t; 
-		return f;
+				return t;
+		return S.f;
 	}
 }
