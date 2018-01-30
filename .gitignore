@@ -23,6 +23,8 @@ run
 lib
 *changelog*
 gradlew*
-LICENSE
+LICENSE*
 *.bat
 Paulscode*
+*CREDITS*
+*README*
