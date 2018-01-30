@@ -1,22 +1,14 @@
 package ivaniesta14.iccbeta;
 
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.*;
-import ivaniesta14.iccbeta.utils.Utils;
 
-@Mod(modid="iccbeta",name="ICCBeta",version="0.1")
+@Mod(modid=ICCBeta.modid,name=ICCBeta.name,version=ICCBeta.version)
 public class ICCBeta {
 	private static boolean E=false,F=false,G=false,C=true;
-	private static final String[] r={
-			"AWWayofTime",		"AdvancedSolarPanel",
-			"Avaritia", 		"Botania",
-			"DCakeMod",
-			"ExtraUtilities",	"IC2",
-			"Metallurgy",		"ProjectE",
-			"ThermalDynamics",	"ThermalExpansion",
-			"Thaumcraft",		"appliedenergistics2",
-			"extracells",		"harvestcraft"
-	};
+	private static final String[] r= {};
+	public static final String modid="iccbeta",name="ICCBeta",version="0.1";
 	
 	@Mod.EventHandler
 	public void h(@SuppressWarnings("unused") FMLPreInitializationEvent ev){
@@ -83,7 +75,7 @@ public class ICCBeta {
 	}
 	private void d() throws Exception{
 		for(int i=0;i<r.length;i++)
-			if(Utils.isLoaded(r[i]))
+			if(Loader.isModLoaded(r[i]))
 				O.o("Successfully detected mod: "+r[i]+"!");
 			else
 				throw new Exception(r[i]+" has not been found or is not "

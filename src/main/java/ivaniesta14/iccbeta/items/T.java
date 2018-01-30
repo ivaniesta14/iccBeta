@@ -1,7 +1,6 @@
 package ivaniesta14.iccbeta.items;
 
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -25,13 +24,5 @@ public class T extends Item{
 	}
 	public static ItemStack s(Block b,int m){
 		return new ItemStack(b,1,m);
-	}
-	public static class ColorHandler implements IItemColor{
-		@Override
-		public int colorMultiplier(ItemStack stack, int tintIndex){
-			if(!(stack.getItem() instanceof T))
-				return white;
-			return ((T)(stack.getItem())).c;
-		}
 	}
 }

@@ -1,5 +1,7 @@
 package ivaniesta14.iccbeta.items;
 
+import gregapi.oredict.OreDictMaterial;
+
 //import ivaniesta14.iccbeta.L;
 //import net.minecraft.init.Items;
 //import net.minecraft.item.Item;
@@ -15,66 +17,47 @@ public class S {
 	public T dust,dustSmall,dustTiny;
 	public T gemMaster,gemHuge,gemBig,gem,gemSmall,gemTiny;
 	public T leaf,nugget,hammer,binder,mortar;
-	public T plate,plateDouble,plateTriple,plateQuad,plateQuin,plateHex,plateHept,plateOcta,plateDense;
-	protected S prev=null;
+	public T plate,plateDouble,plateTriple,plateQuad,plateQuin,
+					plateHex,plateHept,plateOcta,plateDense;
+	public OreDictMaterial mat;
 	
 	public T[] ingots={ingot,ingotDouble,ingotTriple,ingotQuad,ingotQuin};
 	public T[] dusts={dustTiny,dustSmall,dust};
 	public T[] gems={gemTiny,gemSmall,gem,gemBig,gemHuge,gemMaster};
-	public T[] plates={plate,plateDouble,plateTriple,plateQuad,plateQuin,plateHex,plateHept,plateOcta,plateDense};
+	public T[] plates={plate,plateDouble,plateTriple,plateQuad,plateQuin,
+			plateHex,plateHept,plateOcta,plateDense};
 	
-	public S(int c,String m){
+	public final T[] allItems={ingot,ingotDouble,ingotTriple,ingotQuad,ingotQuin,
+			dustTiny,dustSmall,dust,gemTiny,gemSmall,gem,gemBig,gemHuge,gemMaster,
+			plate,plateDouble,plateTriple,plateQuad,plateQuin,
+			plateHex,plateHept,plateOcta,plateDense};
+	
+	protected S(int c,String m){
 		color=c;
 		material=m;
-		for(T ing:ingots){
+		for(@SuppressWarnings("unused") T ing:ingots)
 			ing=new T(color);
-		}
-		for(T dst:dusts){
+		for(@SuppressWarnings("unused") T dst:dusts)
 			dst=new T(color);
-		}
-		for(T gm:gems){
+		for(@SuppressWarnings("unused") T gm:gems)
 			gm=new T(color);
-		}
 		leaf=new T(color);
 		nugget=new T(color);
 		hammer=new T(color);
 		binder=new T(color);
 		mortar=new T(color);
 	}
-	/*public S r() throws Exception{
-		for(int i=0;i<ingots.length;i++){
-			R.r(ingots[i],ingots.length-i,
-				"ingot"+material+String.valueOf(i),f,
-				"ingot"+String.valueOf(i));
-		}
-		for(int i=0;i<dusts.length;i++){
-			R.r(dusts[i],9,
-				"dust"+material+String.valueOf(i),f,
-				"dust"+String.valueOf(i));
-		}
-		for(int i=0;i<gems.length;i++){
-			R.r(gems[i],gems.length-i,
-				"gem"+material+String.valueOf(i),f,
-				"gem"+String.valueOf(i));
-		}
-		R.r(leaf,16,"leaf"+material,f,"leaf");
-		R.r(nugget,9,"nugget"+material,f,"nugget");
-		R.r(hammer,1,"hammer"+material,f,"hamm");
-		R.r(binder,1,"binder"+material,f,"bind");
-		///TODO: Add bind.png to assets
-		for(int i=0;i<plates.length;i++)
-			R.r(plates[i],plates.length-i,
-				"plate"+material+String.valueOf(i),f,
-				"plate"+String.valueOf(i));
-		///TODO: Add plate?.png to assets 
-		R.r(mortar,1,"hammer"+material,f,"mortar");
-		return this;
-	}*/
-	public enum CM{
-		/**No Null Check for prev*/NNC,
-		/**Use Original tools*/OR,
+	public S(OreDictMaterial m){
+		this(_s(m.fRGBaSolid),m.mNameInternal);
+		mat=m;
 	}
-	/*public S c(Item mat, CM... flags) throws Exception{
+		//TODO: Add bind.png to assets
+		//TODO: Add plate?.png to assets
+	/*public enum CM{ TODO: Move to L.j()
+		/**No Null Check for prev NNC,
+		/**Use Original tools OR,
+	}
+	public S c(Item mat, CM... flags) throws Exception{
 		Item ham,bind,mort;
 		if(hasFlag(CM.OR, flags)&&hasFlag(CM.NNC)){
 			ham=L.OHammer;
@@ -171,11 +154,17 @@ public class S {
 		BotaniaAPI.registerElvenTrade(T.s(plateDense),T.s(plateOcta));
 
 		return this;
-	*/
-	protected static boolean hasFlag(CM f, CM... flags){
+	
+	/*protected static boolean hasFlag(CM f, CM... flags){
 		for(CM flag:flags)
 			if(flag==f)
 				return t;
 		return S.f;
+	}*/
+	public static int _s(short[] v){
+		int out=0;
+		for(short s:v)
+			out+=s;
+		return out;
 	}
 }
