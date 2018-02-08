@@ -1,7 +1,5 @@
 package ivaniesta14.iccbeta.items;
 
-import gregapi.oredict.OreDictMaterial;
-
 //import ivaniesta14.iccbeta.L;
 //import net.minecraft.init.Items;
 //import net.minecraft.item.Item;
@@ -19,7 +17,6 @@ public class S {
 	public T leaf,nugget,hammer,binder,mortar;
 	public T plate,plateDouble,plateTriple,plateQuad,plateQuin,
 					plateHex,plateHept,plateOcta,plateDense;
-	public OreDictMaterial mat;
 	
 	public T[] ingots={ingot,ingotDouble,ingotTriple,ingotQuad,ingotQuin};
 	public T[] dusts={dustTiny,dustSmall,dust};
@@ -32,7 +29,7 @@ public class S {
 			plate,plateDouble,plateTriple,plateQuad,plateQuin,
 			plateHex,plateHept,plateOcta,plateDense};
 	
-	protected S(int c,String m){
+	public S(String m,int c){
 		color=c;
 		material=m;
 		for(@SuppressWarnings("unused") T ing:ingots)
@@ -46,10 +43,6 @@ public class S {
 		hammer=new T(color);
 		binder=new T(color);
 		mortar=new T(color);
-	}
-	public S(OreDictMaterial m){
-		this(_s(m.fRGBaSolid),m.mNameInternal);
-		mat=m;
 	}
 		//TODO: Add bind.png to assets
 		//TODO: Add plate?.png to assets
@@ -161,10 +154,4 @@ public class S {
 				return t;
 		return S.f;
 	}*/
-	public static int _s(short[] v){
-		int out=0;
-		for(short s:v)
-			out+=s;
-		return out;
-	}
 }
